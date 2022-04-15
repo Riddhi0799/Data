@@ -1,0 +1,681 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/1/2022 3:26:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KCSLAP5277"
+  DTS:CreatorName="KCSITGLOBAL\Riddhi.Shah"
+  DTS:DTSID="{FCE7DEAC-F25C-4748-8BC5-DEBD4383F9D1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{DCA171EF-D64A-4FE3-A210-D26BD648AF5D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{508ADFAF-BF3D-4EE0-843B-82A0E60B74AD}"
+      DTS:ObjectName="192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.250\SQL2019INT;User ID=riddhi;Initial Catalog=Riddhi.Shah;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATnIcv4uesUC5h0AYfLwVFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADqjomll9C8+16CUDmqkpD4dJHH++xeC+C3ARNd9Zb/xQAAAAAOgAAAAAIAACAAAAAdtsVNT9Mj/7/D2WirERzakLDmrZan5se3g0nk09P0jxAAAADauspIzmtt4ImKjwYO0GBtQAAAAL+2kNyOu8L928GvfcjDMiK1uXYuilwUuWkTU+8H2cSJEz0jTu81K/C4xcxbGq8NWU60591IM4uqKjSFAdp87/4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT- load emp"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b3ca0b3c-a747-4d31-b456-56940d390331}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT- load emp"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT- load emp\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[OLE DB Destination]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- load emp\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_id]"
+                      cachedDataType="i4"
+                      cachedName="emp_id"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_id]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_id]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="emp_name"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_name]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_name]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_salary]"
+                      cachedDataType="numeric"
+                      cachedName="emp_salary"
+                      cachedPrecision="5"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_salary]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_salary]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="emp_email"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_email]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_email]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_dob]"
+                      cachedDataType="dbDate"
+                      cachedName="emp_dob"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_dob]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_dob]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_mob]"
+                      cachedDataType="numeric"
+                      cachedName="emp_mob"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_mob]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_mob]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[emp_state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="emp_state"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_state]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_state]" />
+                    <inputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[d_id]"
+                      cachedDataType="i4"
+                      cachedName="d_id"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[d_id]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[d_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_id]"
+                      dataType="i4"
+                      name="emp_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="emp_name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_salary]"
+                      dataType="numeric"
+                      name="emp_salary"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="emp_email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_dob]"
+                      dataType="dbDate"
+                      name="emp_dob" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_mob]"
+                      dataType="numeric"
+                      name="emp_mob"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[emp_state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="emp_state" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[d_id]"
+                      dataType="i4"
+                      name="d_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- load emp\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- load emp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- load emp\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- load emp\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- load emp\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_id]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_id]"
+                      name="emp_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_name]"
+                      length="20"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_name]"
+                      name="emp_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_salary]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_salary]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_salary]"
+                      name="emp_salary"
+                      precision="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_email]"
+                      length="100"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_email]"
+                      name="emp_email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_dob]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_dob]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_dob]"
+                      name="emp_dob"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_mob]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_mob]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_mob]"
+                      name="emp_mob"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_state]"
+                      length="10"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[emp_state]"
+                      name="emp_state"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[d_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[d_id]"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].Columns[d_id]"
+                      name="d_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_id]"
+                      dataType="i4"
+                      name="emp_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="emp_name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_salary]"
+                      dataType="numeric"
+                      name="emp_salary"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="emp_email" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_dob]"
+                      dataType="dbDate"
+                      name="emp_dob" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_mob]"
+                      dataType="numeric"
+                      name="emp_mob"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[emp_state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="emp_state" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[d_id]"
+                      dataType="i4"
+                      name="d_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_id]"
+                      name="emp_id" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_name]"
+                      name="emp_name" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_salary]"
+                      dataType="numeric"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_salary]"
+                      name="emp_salary"
+                      precision="5" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_email]"
+                      name="emp_email" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_dob]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_dob]"
+                      name="emp_dob" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_mob]"
+                      dataType="numeric"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_mob]"
+                      name="emp_mob"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[emp_state]"
+                      name="emp_state" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[d_id]"
+                      dataType="i4"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[d_id]"
+                      name="d_id" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT- load emp.Paths[OLE DB Source Output]"
+              endId="Package\DFT- load emp\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT- load emp\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{84e5d8e9-16f3-498e-bfff-52e02dc5a80c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{508ADFAF-BF3D-4EE0-843B-82A0E60B74AD}"
+          SQLTask:SqlStatementSource="truncate table dbo.[OLE DB Destination]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3440EF29-770D-47B0-8A58-905794D8C451}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT- load emp" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DFT- load emp"
+          TopLeft="60,157.933334111638" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="151.666663024161,60" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="234.066663024161,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.466663024161,56.3333341116375"
+              Start="0,0"
+              End="-100.466663024161,48.8333341116375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1666670558188" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1666670558188"
+                    Point2="0,28.1666670558188"
+                    Point3="-4,28.1666670558188" />
+                  <mssgle:LineSegment
+                    End="-96.4666630241607,28.1666670558188" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-96.4666630241607,28.1666670558188"
+                    Point2="-100.466663024161,28.1666670558188"
+                    Point3="-100.466663024161,32.1666670558188" />
+                  <mssgle:LineSegment
+                    End="-100.466663024161,48.8333341116375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT- load emp">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\DFT- load emp\OLE DB Destination"
+          TopLeft="371.666651897961,241.800001921654" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\DFT- load emp\OLE DB Source"
+          TopLeft="163.833327041732,78.3000005785624" />
+        <EdgeLayout
+          Id="Package\DFT- load emp.Paths[OLE DB Source Output]"
+          TopLeft="239.833327041732,119.900000578562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="217.433324856229,121.900001343091"
+              Start="0,0"
+              End="217.433324856229,114.400001343091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.9500006715457" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56.9500006715457"
+                    Point2="0,60.9500006715457"
+                    Point3="4,60.9500006715457" />
+                  <mssgle:LineSegment
+                    End="213.433324856229,60.9500006715457" />
+                  <mssgle:CubicBezierSegment
+                    Point1="213.433324856229,60.9500006715457"
+                    Point2="217.433324856229,60.9500006715457"
+                    Point3="217.433324856229,64.9500006715457" />
+                  <mssgle:LineSegment
+                    End="217.433324856229,114.400001343091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT- load emp\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT- load emp\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

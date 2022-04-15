@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>select st.[Group] as [Sales Territory Group],
+st.[Name] as [Sales_Territory_Name],
+sum(soh.TotalDue) as [Sales Amount] from Sales.SalesOrderHeader as soh
+inner join Sales.SalesTerritory as st on soh.TerritoryID=st.TerritoryID
+inner join Sales.SalesOrderDetail as sod on soh.SalesOrderID=sod.SalesOrderID
+inner join Production.ProductCostHistory as pch on sod.ProductID=pch.ProductID
+cross join Production.ProductCategory as pc
+group by st.[Group],st.Name</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Sales_Territory_Group">
+        <DataField>Sales Territory Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sales_Territory_Name">
+        <DataField>Sales_Territory_Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sales_Amount">
+        <DataField>Sales Amount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

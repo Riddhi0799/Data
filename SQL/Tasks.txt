@@ -1,0 +1,112 @@
+---	List all employees details with dob in form of ‘Friday,23 June,1995’ for all employees. (use suitable date-time function)
+
+select (datename(dw,ShipDate)+' , '
+		+cast ((datepart(day,ShipDate))as varchar)+datename(month,ShipDate)+' , '
+		+cast ((datepart(year,ShipDate))as varchar)) as NEW_DATE,* 
+		from [Sales].[SalesOrderHeader]
+
+
+--	List all employees details whose birth is in the month of 'august'. (like, where dob = 'august', use suitable date-time function)
+
+select * from sales.SalesOrderHeader where datepart(month,ShipDate)=8
+
+select duedate from sales.SalesOrderHeader where datename(month,ShipDate)='august'
+
+print floor(rand())
+print(convert(bit, 2*rand()))
+select round(rand(),0) 
+select convert(bit, round(1*rand(),0))
+
+print(round(rand(),0))
+
+
+
+select DATEPART(yyyy,soh.duedate) as [YEAR] ,SubTotal,TotalDue,SalesLastYear,[st].[group],cr.name as CITY_NAME
+
+from sales.salesorderheader as soh
+inner join sales.SalesTerritory as st on soh.territoryid=st.TerritoryID
+inner join sales.salesorderdetail as sod on soh.salesorderid = sod.SalesOrderDetailID
+inner join production.ProductCostHistory as pch on sod.ProductID= pch.ProductID
+inner join Person.CountryRegion as cr on st.CountryRegionCode= cr.CountryRegionCode
+where st.name in (@CITY_OF_COUNTRY) and [st].[group] in (@COUNTRY_GROUP) and DATEPART(yyyy,soh.duedate) in (@YEAR)
+
+
+
+
+select cr.name [Sales Territory Country],st.[Group]
+from person.CountryRegion as cr
+inner join Sales.SalesTerritory as st
+on cr.CountryRegionCode=st.CountryRegionCode
+where st.[Group] in ('europe','pacific','North America')
+
+
+
+   --	retrieve the average summary of all departments whose average salary is greater than the average salary in department id 2.
+
+
+  select * from  (select d_id, avg(salary) as AVG_SALARY from employee
+  group by d_id)employee where AVG_SALARY >(select distinct(AVG_SALARY) from employee where id = 3)
+
+  select salary from employee where salary>(select salary from employee where id = 1)
+  
+  
+  
+  
+  
+alter procedure fruits 
+@fruit_name varchar(20),
+@quentity int 
+as
+begin
+declare @a int  = (select product_stock from product where product_name=@fruit_name)
+if ((select product_stock from product  where product_name= @fruit_name) > @quentity ) 
+begin 
+	update product 
+	set product_stock=product_stock-@quentity where product_name=@fruit_name
+	insert into selling (s_name,s_stock) values (@fruit_name,@quentity) 
+	select * from product
+	select * from selling
+end
+else 
+begin select 'Please enter Lower Quentity less then or equal  ' + cast(@a as varchar(20))
+end
+end
+
+
+
+
+
+
+
+
+WITH CTE AS
+(
+SELECT *,ROW_NUMBER() OVER (PARTITION BY id ,city_name ORDER BY id ,city_name) RN  FROM temp
+)
+DELETE FROM CTE WHERE RN<>1
+
+
+
+
+
+
+
+select * from temp_2 where salary = (SELECT MAX(SALARY) FROM temp_2 WHERE SALARY < (SELECT MAX(SALARY) FROM temp_2))
+
+
+
+
+
+declare  @start int = 1,@end int = 10, @num int = 1
+while @start <= @end
+begin
+	print (Concat(@num , ' * ' , @start , ' = '  , @start*@num))
+set @start += 1
+if @start=11
+begin 
+if @num=11
+	break
+set @start = 1 
+set @num= @num+1
+end
+end

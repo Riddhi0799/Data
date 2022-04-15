@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSource1">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=192.168.1.250\SQL2019INT;Initial Catalog=Riddhi.Shah</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>5e89b2a6-f876-4c98-8045-d6c75fb36df8</DataSourceID>
+</RptDataSource>

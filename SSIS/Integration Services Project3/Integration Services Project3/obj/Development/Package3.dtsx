@@ -1,0 +1,1541 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/13/2022 12:09:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KCSLAP5277"
+  DTS:CreatorName="KCSITGLOBAL\Riddhi.Shah"
+  DTS:DTSID="{7B2B1174-7723-4DBF-BEF7-9B2659C54428}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package3"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{0817D3AE-B2D8-4E60-9C25-97C9A4EF4F0D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CAE8901C-B6BC-4818-AF8E-FAF1A1402F26}"
+      DTS:ObjectName="192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.250\SQL2019INT;User ID=riddhi;Initial Catalog=Riddhi.Shah;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATnIcv4uesUC5h0AYfLwVFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAActwmTBgllaqrlxvThNLm5cfxYGVHadjBsgKKvUa+EZgAAAAAOgAAAAAIAACAAAACw1kRROMV02ZWsff2q/rQs+ZW+BS9VmKYxBXRT2S7hrxAAAACimCAA6/qEJL2TyCYBZMjdQAAAAPANbPrQDQH+TIn1M9q3oGLBV6EOuPI5jKEKgeYq1BvWjfhEZfQVFLEUOO896LFqBwP3RJ/ERwsww+nFtWk9JGo</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E6E0DD0A-501B-4349-A99B-F63FB8AFCE6F}"
+      DTS:ObjectName="192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=192.168.1.250\SQL2019INT;User ID=riddhi;Initial Catalog=Riddhi.Shah;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATnIcv4uesUC5h0AYfLwVFAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA/VxTKqAtCuHb7lUe7is4N+nYV0kfD9s21lpDS9VmXtQAAAAAOgAAAAAIAACAAAADRtOjubIQioEYsDvya8bqC83BRAGpsONPXSJnaOoJ07RAAAAD/CWgvoxsy/pMFjHAV8d1eQAAAAPzqd7Vy4suTO0Ftujbgg2OpxT90JKV3E3Ni76ZdpRdjoHijQtxpxKYb1mXi138ELHWIMeKB/V4SRvcpgU2z2SI</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{614FCBAE-A2DE-4FC9-9B17-1842C2CCEC4C}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Riddhi.Shah\Downloads\Adventure.xlsx;Extended Properties=&quot;EXCEL 3.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Country"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{47BF6E0D-DD2C-4E8B-BDC5-4CD6C69E172B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Country"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Country\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">AdvWorkArea$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Country\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Country\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[City_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[City_Name]"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[City_Name]"
+                      name="City_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[State_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[State_Name]"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[State_Name]"
+                      name="State_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country_Name]"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]"
+                      name="Country_Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="City_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="State_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country_Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Country\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[City_Name]"
+                      name="City_Name" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[State_Name]"
+                      name="State_Name" />
+                    <outputColumn
+                      refId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Error Output].Columns[Country_Name]"
+                      name="Country_Name" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Country\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[cntry]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Country\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country_Name"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_Name]"
+                      lineageId="Package\Country\Sort.Outputs[Sort Output].Columns[Country_Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Country\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Country\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Country\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Country\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Country\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Country\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Country\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Country\Sort.Inputs[Sort Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Country\Sort.Inputs[Sort Input].Columns[City_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City_Name"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[City_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Country\Sort.Inputs[Sort Input].Columns[State_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State_Name"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[State_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Country\Sort.Inputs[Sort Input].Columns[Country_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country_Name"
+                      lineageId="Package\Country\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Country\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Country\Sort.Outputs[Sort Output].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Sort.Outputs[Sort Output].Columns[id]"
+                      name="id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Country\Excel Source.Outputs[Excel Source Output].Columns[id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Country\Sort.Outputs[Sort Output].Columns[City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Sort.Outputs[Sort Output].Columns[City_Name]"
+                      name="City_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Country\Excel Source.Outputs[Excel Source Output].Columns[City_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Country\Sort.Outputs[Sort Output].Columns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Sort.Outputs[Sort Output].Columns[State_Name]"
+                      name="State_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Country\Excel Source.Outputs[Excel Source Output].Columns[State_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Country\Sort.Outputs[Sort Output].Columns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Country\Sort.Outputs[Sort Output].Columns[Country_Name]"
+                      name="Country_Name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Country\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Country.Paths[Excel Source Output]"
+              endId="Package\Country\Sort.Inputs[Sort Input]"
+              name="Excel Source Output"
+              startId="Package\Country\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Country.Paths[Sort Output]"
+              endId="Package\Country\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Country\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\State"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CE2A9C34-020A-465C-B408-DB40DB8A8DE1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="State"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\State\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">AdvWorkArea$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\State\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\State\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[City_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[City_Name]"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[City_Name]"
+                      name="City_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[State_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[State_Name]"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[State_Name]"
+                      name="State_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country_Name]"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]"
+                      name="Country_Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="City_Name" />
+                    <externalMetadataColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="State_Name" />
+                    <externalMetadataColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country_Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\State\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[City_Name]"
+                      name="City_Name" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[State_Name]"
+                      name="State_Name" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[Country_Name]"
+                      name="Country_Name" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\State\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[cntry]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[cntry]) [refTable]
+where [refTable].[Country_Name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country_Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\State\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\State\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\State\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\State\Lookup.Inputs[Lookup Input].Columns[Country_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country_Name"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Country_Name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\State\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\State\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\State\Lookup.Outputs[Lookup Match Output].Columns[c_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\State\Lookup.Outputs[Lookup Match Output].Columns[c_id]"
+                      name="c_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\State\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\State\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\State\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\State\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\State\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\State\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\State\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\State\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\State\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[statee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\State\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  connectionManagerRefId="Package.ConnectionManagers[192.168.1.250\SQL2019INT.Riddhi.Shah.riddhi]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State_Name"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State_Name]"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[State_Name]" />
+                    <inputColumn
+                      refId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[c_id]"
+                      cachedDataType="i4"
+                      cachedName="c_id"
+                      externalMetadataColumnId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[c_id]"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[c_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[s_id]"
+                      dataType="i4"
+                      name="s_id" />
+                    <externalMetadataColumn
+                      refId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="State_Name" />
+                    <externalMetadataColumn
+                      refId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[c_id]"
+                      dataType="i4"
+                      name="c_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\State\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\State\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\State\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\State\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\State\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\State\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\State\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\State\Sort.Inputs[Sort Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\State\Sort.Inputs[Sort Input].Columns[City_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City_Name"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[City_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\State\Sort.Inputs[Sort Input].Columns[State_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State_Name"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[State_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\State\Sort.Inputs[Sort Input].Columns[Country_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country_Name"
+                      lineageId="Package\State\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\State\Sort.Inputs[Sort Input].Columns[c_id]"
+                      cachedDataType="i4"
+                      cachedName="c_id"
+                      lineageId="Package\State\Lookup.Outputs[Lookup Match Output].Columns[c_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\State\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\State\Sort.Outputs[Sort Output].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[id]"
+                      name="id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\State\Excel Source.Outputs[Excel Source Output].Columns[id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\State\Sort.Outputs[Sort Output].Columns[City_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[City_Name]"
+                      name="City_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\State\Excel Source.Outputs[Excel Source Output].Columns[City_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\State\Sort.Outputs[Sort Output].Columns[State_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[State_Name]"
+                      name="State_Name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\State\Excel Source.Outputs[Excel Source Output].Columns[State_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\State\Sort.Outputs[Sort Output].Columns[Country_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[Country_Name]"
+                      name="Country_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\State\Excel Source.Outputs[Excel Source Output].Columns[Country_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\State\Sort.Outputs[Sort Output].Columns[c_id]"
+                      dataType="i4"
+                      lineageId="Package\State\Sort.Outputs[Sort Output].Columns[c_id]"
+                      name="c_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\State\Lookup.Outputs[Lookup Match Output].Columns[c_id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\State.Paths[Excel Source Output]"
+              endId="Package\State\Lookup.Inputs[Lookup Input]"
+              name="Excel Source Output"
+              startId="Package\State\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\State.Paths[Lookup Match Output]"
+              endId="Package\State\Sort.Inputs[Sort Input]"
+              name="Lookup Match Output"
+              startId="Package\State\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\State.Paths[Sort Output]"
+              endId="Package\State\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\State\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\Country"
+          TopLeft="176.666659646564,225.333335124122" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\State"
+          TopLeft="421.666649911139,229.666668491893" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Country">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Country\Excel Source"
+          TopLeft="328.33332028654,43.3333336777157" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Country\Sort"
+          TopLeft="184.999992648761,218.400001735687" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Country\OLE DB Destination"
+          TopLeft="161.666660242611,312.866669153108" />
+        <EdgeLayout
+          Id="Package\Country.Paths[Sort Output]"
+          TopLeft="233.799992648761,260.000001735687">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.46666759385,52.8666674174203"
+              Start="0,0"
+              End="13.46666759385,45.3666674174203">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4333337087101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.4333337087101"
+                    Point2="0,26.4333337087101"
+                    Point3="4,26.4333337087101" />
+                  <mssgle:LineSegment
+                    End="9.46666759384999,26.4333337087101" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.46666759384999,26.4333337087101"
+                    Point2="13.46666759385,26.4333337087101"
+                    Point3="13.46666759385,30.4333337087101" />
+                  <mssgle:LineSegment
+                    End="13.46666759385,45.3666674174203" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Country.Paths[Excel Source Output]"
+          TopLeft="398.33332028654,84.9333336777157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.533327637779,133.466668057972"
+              Start="0,0"
+              End="-164.533327637779,125.966668057972">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.7333340289858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.7333340289858"
+                    Point2="0,66.7333340289858"
+                    Point3="-4,66.7333340289858" />
+                  <mssgle:LineSegment
+                    End="-160.533327637779,66.7333340289858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.533327637779,66.7333340289858"
+                    Point2="-164.533327637779,66.7333340289858"
+                    Point3="-164.533327637779,70.7333340289858" />
+                  <mssgle:LineSegment
+                    End="-164.533327637779,125.966668057972" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Country\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Country\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\State">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\State\Excel Source"
+          TopLeft="244,36" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\State\Lookup"
+          TopLeft="274,155" />
+        <EdgeLayout
+          Id="Package\State.Paths[Excel Source Output]"
+          TopLeft="314,77.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.3999999999999,77.4"
+              Start="0,0"
+              End="16.3999999999999,69.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.7"
+                    Point2="0,38.7"
+                    Point3="4,38.7" />
+                  <mssgle:LineSegment
+                    End="12.3999999999999,38.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.3999999999999,38.7"
+                    Point2="16.3999999999999,38.7"
+                    Point3="16.3999999999999,42.7" />
+                  <mssgle:LineSegment
+                    End="16.3999999999999,69.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\State\Sort"
+          TopLeft="298,271" />
+        <EdgeLayout
+          Id="Package\State.Paths[Lookup Match Output]"
+          TopLeft="330.4,196.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.4,74.4"
+              Start="0,0"
+              End="16.4,66.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.2"
+                    Point2="0,37.2"
+                    Point3="4,37.2" />
+                  <mssgle:LineSegment
+                    End="12.4,37.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.4,37.2"
+                    Point2="16.4,37.2"
+                    Point3="16.4,41.2" />
+                  <mssgle:LineSegment
+                    End="16.4,66.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.99138671875,42.2,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\State\OLE DB Destination"
+          TopLeft="372,368" />
+        <EdgeLayout
+          Id="Package\State.Paths[Sort Output]"
+          TopLeft="346.8,312.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.8,55.4"
+              Start="0,0"
+              End="110.8,47.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7"
+                    Point2="0,27.7"
+                    Point3="4,27.7" />
+                  <mssgle:LineSegment
+                    End="106.8,27.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.8,27.7"
+                    Point2="110.8,27.7"
+                    Point3="110.8,31.7" />
+                  <mssgle:LineSegment
+                    End="110.8,47.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\State\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\State\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[cntry]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\State\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

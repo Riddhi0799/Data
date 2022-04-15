@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <CommandText>select DATEPART(YYYY,soh.duedate) as [Calendar Year],
+st.[Group] as [Sales Territory Group],
+sum(soh.TotalDue) as [Sales Amount],pc.name as category from Sales.SalesOrderHeader as soh
+inner join Sales.SalesTerritory as st on soh.TerritoryID=st.TerritoryID
+inner join Sales.SalesOrderDetail as sod on soh.SalesOrderID=sod.SalesOrderID
+inner join Production.ProductCostHistory as pch on sod.ProductID=pch.ProductID
+cross join Production.ProductCategory as pc
+group by DATEPART(yyyy,soh.DueDate),st.[Group],pc.Name
+order by [Calendar Year]</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Calendar_Year">
+        <DataField>Calendar Year</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Sales_Territory_Group">
+        <DataField>Sales Territory Group</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sales_Amount">
+        <DataField>Sales Amount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="category">
+        <DataField>category</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
